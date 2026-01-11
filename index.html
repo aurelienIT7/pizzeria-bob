@@ -1,1 +1,151 @@
-html_site
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pizzeria BOB</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #fff8f0;
+            color: #4b2e05;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #d32f2f;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(211,47,47,0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto 4rem;
+            padding: 0 1rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        h2 {
+            color: #b71c1c;
+            border-bottom: 3px solid #d32f2f;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+        .pizzas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+            gap: 1.8rem;
+        }
+        .pizza-card {
+            background-color: #fff3e0;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(179,28,28,0.2);
+            padding: 1.4rem 1.6rem;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+        .pizza-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(179,28,28,0.4);
+        }
+        .pizza-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.6rem;
+            color: #b71c1c;
+        }
+        .pizza-card p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        .contact-info {
+            background: #ffe0b2;
+            border-radius: 10px;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 5px rgba(179,28,28,0.15);
+            max-width: 400px;
+        }
+        .contact-info p {
+            margin: 0.3rem 0;
+        }
+        footer {
+            background-color: #d32f2f;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            main {
+                margin: 1rem auto 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pizzeria BOB</h1>
+        <p>Bienvenue chez Pizzeria BOB, votre coin de bonheur où chaque pizza est préparée avec passion et ingrédients frais. Bon appétit !</p>
+    </header>
+    <main>
+        <section aria-labelledby="nos-pizzas-title">
+            <h2 id="nos-pizzas-title">Nos pizzas</h2>
+            <div class="pizzas">
+                <article class="pizza-card" aria-label="Pizza Margherita">
+                    <h3>Margherita</h3>
+                    <p>Tomate fraîche, mozzarella, basilic frais – la simplicité italienne incarnée.</p>
+                </article>
+                <article class="pizza-card" aria-label="Pizza Quattro Formaggi">
+                    <h3>Quattro Formaggi</h3>
+                    <p>Mozzarella, gorgonzola, parmesan et emmental, pour les amateurs de fromages fondants.</p>
+                </article>
+                <article class="pizza-card" aria-label="Pizza Diavola">
+                    <h3>Diavola</h3>
+                    <p>Sauce tomate, mozzarella, salami piquant – un plaisir relevé pour les aventuriers du goût.</p>
+                </article>
+                <article class="pizza-card" aria-label="Pizza Végétarienne">
+                    <h3>Végétarienne</h3>
+                    <p>Tomate, mozzarella, poivrons, champignons, courgettes et olives noires.</p>
+                </article>
+            </div>
+        </section>
+        <section aria-labelledby="horaires-contact-title">
+            <h2 id="horaires-contact-title">Horaires &amp; Contact</h2>
+            <div class="contact-info">
+                <p><strong>Horaires d'ouverture :</strong></p>
+                <p>Du lundi au dimanche : 11h30 - 22h30</p>
+                <p><strong>Adresse :</strong></p>
+                <p>123 Rue des Saveurs, 75000 Paris</p>
+                <p><strong>Téléphone :</strong></p>
+                <p><a href="tel:+33123456789" style="color:#b71c1c; text-decoration:none;">01 23 45 67 89</a></p>
+                <p><strong>Email :</strong></p>
+                <p><a href="mailto:contact@pizzeriabob.fr" style="color:#b71c1c; text-decoration:none;">contact@pizzeriabob.fr</a></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Pizzeria BOB - Toutes droits réservés
+    </footer>
+</body>
+</html>
