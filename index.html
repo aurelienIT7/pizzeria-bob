@@ -1,0 +1,187 @@
+html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pizzeria BOB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            background-color: #fff8f0;
+            color: #333;
+        }
+        header {
+            background-color: #d94f2a;
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            padding: 0;
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        h1, h2 {
+            color: #d94f2a;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        .pizzas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .pizza {
+            background: #fff1e6;
+            border: 1px solid #d94f2a;
+            border-radius: 8px;
+            padding: 1rem;
+            flex: 1 1 250px;
+        }
+        .pizza h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        .blog-article {
+            margin-bottom: 1.5rem;
+        }
+        form label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: bold;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+        }
+        form button {
+            background-color: #d94f2a;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        form button:hover {
+            background-color: #b03b22;
+        }
+        footer {
+            background-color: #222;
+            color: #ddd;
+            text-align: center;
+            padding: 1rem 2rem;
+            font-size: 0.9rem;
+        }
+        /* Smooth scroll for navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#pizzas">Nos Pizzas</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil" aria-label="Accueil">
+            <h1>Bienvenue à la Pizzeria BOB</h1>
+            <p>Découvrez nos délicieuses pizzas artisanales, préparées avec des ingrédients frais et de qualité.</p>
+        </section>
+
+        <section id="pizzas" aria-labelledby="pizzas-title">
+            <h2 id="pizzas-title">Nos pizzas</h2>
+            <div class="pizzas">
+                <article class="pizza" aria-labelledby="pizza-margherita">
+                    <h3 id="pizza-margherita">Margherita</h3>
+                    <p>Sauce tomate, mozzarella, basilic frais.</p>
+                </article>
+                <article class="pizza" aria-labelledby="pizza-pepperoni">
+                    <h3 id="pizza-pepperoni">Pepperoni</h3>
+                    <p>Sauce tomate, mozzarella, pepperoni épicé.</p>
+                </article>
+                <article class="pizza" aria-labelledby="pizza-reine">
+                    <h3 id="pizza-reine">Reine</h3>
+                    <p>Sauce tomate, mozzarella, jambon, champignons.</p>
+                </article>
+                <article class="pizza" aria-labelledby="pizza-vegetarienne">
+                    <h3 id="pizza-vegetarienne">Végétarienne</h3>
+                    <p>Sauce tomate, mozzarella, légumes grillés de saison.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="blog" aria-labelledby="blog-title">
+            <h2 id="blog-title">Blog</h2>
+            <article class="blog-article">
+                <h3>Nos ingrédients : fraîcheur et qualité</h3>
+                <p>Chez Pizzeria BOB, nous choisissons uniquement les meilleurs produits locaux pour vous garantir la meilleure qualité.</p>
+            </article>
+            <article class="blog-article">
+                <h3>Comment réaliser une pâte à pizza maison</h3>
+                <p>Découvrez notre recette simple et rapide pour une pâte à pizza légère et croustillante. Parfait pour vos soirées pizzas !</p>
+            </article>
+            <article class="blog-article">
+                <h3>Les accords vins et pizzas</h3>
+                <p>Apprenez à marier vos pizzas préférées avec le vin idéal pour sublimer chaque bouchée.</p>
+            </article>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contactez-nous</h2>
+            <form action="#" method="post" aria-describedby="contact-instruction">
+                <p id="contact-instruction">Remplissez le formulaire ci-dessous pour nous envoyer un message.</p>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required />
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pizzeria BOB - Tous droits réservés.</p>
+        <p>Adresse : 12 rue de la Pizza, 75000 Paris - Téléphone : 01 23 45 67 89</p>
+        <p>Mentions légales | Politique de confidentialité</p>
+    </footer>
+</body>
+</html>
