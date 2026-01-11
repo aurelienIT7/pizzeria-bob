@@ -3,184 +3,160 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pizzeria BOB</title>
+    <title>Pizza Bella - Pizzeria Artisanale Locale</title>
     <style>
+        /* Reset & base */
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
+            background: #fff8f0;
+            color: #4a2c17;
             line-height: 1.6;
-            background-color: #fff8f0;
-            color: #333;
+        }
+        a {
+            color: #d94e0f;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
         header {
-            background-color: #d94f2a;
-            color: white;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            background-color: #d94e0f;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
         }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            padding: 0;
+        header h1 {
             margin: 0;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
         }
         main {
             max-width: 900px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
-        h1, h2 {
-            color: #d94f2a;
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            color: #6b4432;
         }
         section {
             margin-bottom: 3rem;
         }
+        section h2 {
+            border-bottom: 3px solid #d94e0f;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
         .pizzas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 1.5rem;
         }
-        .pizza {
-            background: #fff1e6;
-            border: 1px solid #d94f2a;
+        .pizza-card {
+            background: #fff3e6;
+            border: 2px solid #d94e0f;
             border-radius: 8px;
-            padding: 1rem;
-            flex: 1 1 250px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 2px 6px rgba(217,78,15,0.2);
+            transition: box-shadow 0.3s ease;
         }
-        .pizza h3 {
+        .pizza-card:hover {
+            box-shadow: 0 6px 12px rgba(217,78,15,0.4);
+        }
+        .pizza-card h3 {
             margin-top: 0;
             margin-bottom: 0.5rem;
+            color: #af3b00;
         }
-        .blog-article {
-            margin-bottom: 1.5rem;
+        .pizza-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #5c3a19;
         }
-        form label {
-            display: block;
-            margin-bottom: 0.3rem;
-            font-weight: bold;
+        .contact-info {
+            font-size: 1rem;
+            color: #5c3a19;
+            line-height: 1.5;
         }
-        form input, form textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            font-family: inherit;
-        }
-        form button {
-            background-color: #d94f2a;
-            color: white;
-            border: none;
-            padding: 0.7rem 1.2rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        form button:hover {
-            background-color: #b03b22;
+        .contact-info strong {
+            color: #d94e0f;
         }
         footer {
-            background-color: #222;
-            color: #ddd;
-            text-align: center;
-            padding: 1rem 2rem;
+            background-color: #d94e0f;
+            color: #fff;
+            text-align:center;
+            padding: 1rem 0;
             font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            user-select: none;
         }
-        /* Smooth scroll for navigation */
-        html {
-            scroll-behavior: smooth;
+        @media (max-width: 450px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            section h2 {
+                font-size: 1.4rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav aria-label="Menu principal">
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#pizzas">Nos Pizzas</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Pizza Bella</h1>
+        <p>La saveur authentique de l’Italie, au cœur de votre quartier</p>
     </header>
-
     <main>
-        <section id="accueil" aria-label="Accueil">
-            <h1>Bienvenue à la Pizzeria BOB</h1>
-            <p>Découvrez nos délicieuses pizzas artisanales, préparées avec des ingrédients frais et de qualité.</p>
+        <section class="intro">
+            <p>Chez Pizza Bella, nous préparons chaque pizza avec amour et les meilleurs ingrédients frais. Une ambiance chaleureuse et un goût artisanal pour des moments conviviaux en famille ou entre amis.</p>
         </section>
 
-        <section id="pizzas" aria-labelledby="pizzas-title">
-            <h2 id="pizzas-title">Nos pizzas</h2>
+        <section id="nos-pizzas">
+            <h2>Nos pizzas</h2>
             <div class="pizzas">
-                <article class="pizza" aria-labelledby="pizza-margherita">
-                    <h3 id="pizza-margherita">Margherita</h3>
-                    <p>Sauce tomate, mozzarella, basilic frais.</p>
+                <article class="pizza-card">
+                    <h3>Margherita</h3>
+                    <p>La simplicité italienne: sauce tomate maison, mozzarella fondante, et basilic frais.</p>
                 </article>
-                <article class="pizza" aria-labelledby="pizza-pepperoni">
-                    <h3 id="pizza-pepperoni">Pepperoni</h3>
-                    <p>Sauce tomate, mozzarella, pepperoni épicé.</p>
+                <article class="pizza-card">
+                    <h3>Quatre Fromages</h3>
+                    <p>Un mariage gourmand de mozzarella, gorgonzola, parmesan et emmental, pour un délice fondant.</p>
                 </article>
-                <article class="pizza" aria-labelledby="pizza-reine">
-                    <h3 id="pizza-reine">Reine</h3>
-                    <p>Sauce tomate, mozzarella, jambon, champignons.</p>
+                <article class="pizza-card">
+                    <h3>Napolitaine</h3>
+                    <p>Une recette classique avec tomates San Marzano, anchois, câpres et olives noires.</p>
                 </article>
-                <article class="pizza" aria-labelledby="pizza-vegetarienne">
-                    <h3 id="pizza-vegetarienne">Végétarienne</h3>
-                    <p>Sauce tomate, mozzarella, légumes grillés de saison.</p>
+                <article class="pizza-card">
+                    <h3>Végétarienne</h3>
+                    <p>Un festival de saveurs avec poivrons, champignons, courgettes, oignons rouges et olives.</p>
                 </article>
             </div>
         </section>
 
-        <section id="blog" aria-labelledby="blog-title">
-            <h2 id="blog-title">Blog</h2>
-            <article class="blog-article">
-                <h3>Nos ingrédients : fraîcheur et qualité</h3>
-                <p>Chez Pizzeria BOB, nous choisissons uniquement les meilleurs produits locaux pour vous garantir la meilleure qualité.</p>
-            </article>
-            <article class="blog-article">
-                <h3>Comment réaliser une pâte à pizza maison</h3>
-                <p>Découvrez notre recette simple et rapide pour une pâte à pizza légère et croustillante. Parfait pour vos soirées pizzas !</p>
-            </article>
-            <article class="blog-article">
-                <h3>Les accords vins et pizzas</h3>
-                <p>Apprenez à marier vos pizzas préférées avec le vin idéal pour sublimer chaque bouchée.</p>
-            </article>
-        </section>
-
-        <section id="contact" aria-labelledby="contact-title">
-            <h2 id="contact-title">Contactez-nous</h2>
-            <form action="#" method="post" aria-describedby="contact-instruction">
-                <p id="contact-instruction">Remplissez le formulaire ci-dessous pour nous envoyer un message.</p>
-                <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="nom" required />
-
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required />
-
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Envoyer</button>
-            </form>
+        <section id="horaires-contact">
+            <h2>Horaires & Contact</h2>
+            <div class="contact-info">
+                <p><strong>Adresse :</strong> 12 Rue des Oliviers, 75012 Paris</p>
+                <p><strong>Téléphone :</strong> <a href="tel:+33123456789">01 23 45 67 89</a></p>
+                <p><strong>Horaires :</strong></p>
+                <ul>
+                    <li>Lundi - Vendredi : 11h30 - 14h30 & 18h00 - 22h30</li>
+                    <li>Samedi : 12h00 - 15h00 & 18h00 - 23h00</li>
+                    <li>Dimanche : 18h00 - 22h00</li>
+                </ul>
+                <p>Nous vous recommandons de réserver afin de garantir votre table.</p>
+            </div>
         </section>
     </main>
-
     <footer>
-        <p>&copy; 2024 Pizzeria BOB - Tous droits réservés.</p>
-        <p>Adresse : 12 rue de la Pizza, 75000 Paris - Téléphone : 01 23 45 67 89</p>
-        <p>Mentions légales | Politique de confidentialité</p>
+        &copy; 2024 Pizza Bella - Tous droits réservés
     </footer>
 </body>
 </html>
